@@ -34,7 +34,7 @@ public class TicketingServiceUtility {
 			System.out.println(
 					"4 - Hold seats with customer preferred row and column and reserve held seats");
 			System.out.println(
-					"5 -Find and Hold Seats with system preferred best available and reserve held seats");
+					"5 - Find and Hold Seats with system preferred best available and reserve held seats");
 			System.out.println("6 - Exit");
 
 			selection = input.nextInt();
@@ -89,7 +89,7 @@ public class TicketingServiceUtility {
 				if (findAndHoldResponse.getStatus().equals(FindAndHoldResponse.Status.NeedConfirm)) {
 					
 					for(Seat st:findAndHoldResponse.getBestAvailableSeats()){
-						System.out.println("Row :"+st.getRowNo()+"Column :"+st.getColNo());
+						System.out.println("Row :"+st.getRowNo()+" Column :"+st.getColNo());
 					}
 
 					System.out.println(findAndHoldResponse.getMesaage());
@@ -141,9 +141,9 @@ public class TicketingServiceUtility {
 				
 			case 4:
 
-				System.out.println("Enter customer Name \n");
+				System.out.println("Enter customer Name");
 				String name1 = input.next();
-				System.out.println("Enter customer Ph Number \n");
+				System.out.println("Enter customer Ph Number");
 				String phNum1 = input.next();
 				
 				while(!phNum1.matches("[0-9]{10}")){
@@ -158,12 +158,12 @@ public class TicketingServiceUtility {
 				
 				for(int i=1;i<=reqNuOfSeats;){
 					
-					System.out.println("Enter preferred Row only Single Character between A  to " + Constants.ENDING_ROW +" for Seat "+ i);
+					System.out.println("Enter preferred Row Only Single Character between A to " + Constants.ENDING_ROW +" for Seat "+ i);
 					Character r = input.next().toUpperCase().charAt(0);
 					
 					while(!validateRow(r)){
 						
-						System.out.println("Wrong input. Enter preferred Row only Single Character between A to " + Constants.ENDING_ROW +" for Seat "+ i);
+						System.out.println("Wrong input. Enter preferred Row Only Single Character between A to " + Constants.ENDING_ROW +" for Seat "+ i);
 						r = input.next().toUpperCase().charAt(0);
 					}
 					System.out.println("Enter preferred column only Single integer between 1 to " + Constants.NUMBER_COLUMNS+" for Seat "+ i);
@@ -171,7 +171,7 @@ public class TicketingServiceUtility {
 					
                     while(!validateColumn(c)){
 						
-                    	System.out.println("Wrong input. Enter preferred column only Single integer between 1 to " + Constants.NUMBER_COLUMNS+" for Seat "+ i);
+                    	System.out.println("Wrong input. Enter preferred column Only Single integer between 1 to " + Constants.NUMBER_COLUMNS+" for Seat "+ i);
 						c = input.nextInt();
 					}
                     Seat st = new Seat(r,c);
@@ -216,9 +216,9 @@ public class TicketingServiceUtility {
 
 			case 5:
 				
-				System.out.println("Enter customer name \n");
+				System.out.println("Enter customer name");
 				String name2 = input.next();
-				System.out.println("Enter customer Ph number \n");
+				System.out.println("Enter customer Ph number");
 				String phNum2 = input.next();
 				
 				while(!phNum2.matches("[0-9]{10}")){

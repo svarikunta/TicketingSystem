@@ -82,7 +82,7 @@ public class TicketingServiceImplHelper {
 				if (availableSeats.size() == reqNumbOfSeats) {
 					response.setStatus(FindAndHoldResponse.Status.NeedConfirm);
 					response.setMesaage("Requested " + reqNumbOfSeats
-							+ " seats are not availabel in same row please review available seats and confirm Y/N");
+							+ " seats are not available in same row please review available seats and confirm Y/N");
 					response.setTotalAvailableSeats(Stage.seatsAvailable.get());
 					return response;
 				}
@@ -256,7 +256,7 @@ public class TicketingServiceImplHelper {
 
 		if (heldSeats.size() == reservedList.size()) {
 			response.setStatus(ReserveAndCommitResponse.Status.Sucess);
-			response.setMessage(" Requested " + heldSeats.size() + " seats are reserved");
+			response.setMessage("Requested " + heldSeats.size() + " seats are reserved for customer "+cust.getCustomerName());
 		} else {
 			response.setStatus(ReserveAndCommitResponse.Status.Eror);
 			response.setMessage("Seats hold time passed. Please retry booking");
